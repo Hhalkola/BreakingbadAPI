@@ -31,6 +31,10 @@ var app = new Vue({
             //Read data to characters
             this.app.characters = response.data;
             })
+            //If error occurs
+            .catch(function (error) {
+                app.answer = 'Error! Could not reach the API. ' + error
+              })
         },
         //Helper function to be called when selection changes in combobox
         switchView: function(event, selectedIndex) {
