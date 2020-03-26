@@ -1,0 +1,34 @@
+body{
+    margin: 5px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: gainsboro;
+}
+#char_combobox{
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+}
+select {
+    font-size: 14px;
+    border: 1px;
+    background-color: snow;
+    border-radius: 5px;
+}
+select:hover{
+    transition-duration: 0.25s;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    color: #222; 
+    outline: none;
+}
+option{
+    background-color: snow;
+}
+h2{
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+img{
+    border-radius: 5px;
+}

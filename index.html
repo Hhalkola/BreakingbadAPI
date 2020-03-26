@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BreakingbadApi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- Simple web page made with Vue.js. Uses BreakingbadApi from where we take data with axios and present character properties based on combobox selection -->
 <body>
     <div id="app">
+        <!-- Combobox -->
         <select id="char_combobox" @change="switchView($event, $event.target.selectedIndex)">
-            <option v-for="char in characters">
+            <option id="combo_item" v-for="char in characters">
                 {{char.name}}
             </option>
         </select>
+        <!-- Show data based on combobox selection -->
         <div id="char_details">
-            <h3>Name: {{characters[selectedIndex].name}}</h3>
+            <h2>Name: {{characters[selectedIndex].name}}</h2>
+            <h3>Actors name: {{characters[selectedIndex].portrayed}}</h3>
             <h3>Nickname: {{characters[selectedIndex].nickname}}</h3>
             <h3>Birthday: {{characters[selectedIndex].birthday}}</h3>
             <h3>Status: {{characters[selectedIndex].status}}</h3>
+            <h3>Occupation:</h3>
+            <!-- Loop through occupation array and write -->
             <div id="char_occupation" v-for="occ in characters[selectedIndex].occupation">
-                <h3>Occupation: {{occ}}</h3>
+                <h3>{{occ}}</h3>
             </div>
+            <!-- Picture hold here -->
             <div id="char_picture">
                 <img :src='characters[selectedIndex].img' width="350px" height="500px">
             </div>
